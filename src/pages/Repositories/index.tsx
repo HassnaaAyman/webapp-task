@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useQuery } from "react-query";
+import Layout from "../../common/Layout";
 import { axiosApiInstance } from "../../infrastructure/utils/api";
 
 const Repositories = () => {
@@ -17,7 +18,7 @@ const Repositories = () => {
     }
   );
 
-  return <></>;
+  return <Layout></Layout>;
 };
 
 export default Repositories;
