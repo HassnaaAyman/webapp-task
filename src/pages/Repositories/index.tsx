@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import Layout from "../../common/Layout";
-import { axiosApiInstance } from "../../infrastructure/utils/api";
+import { axiosApiInstance } from "../../infrastructure/api/api";
 import { List, Avatar, Skeleton, Divider } from "antd";
 import InfiniteScroll from "react-infinite-scroll-component";
+import { RepoProps } from "../../infrastructure/types";
 
 const Repositories = () => {
   const [loading, setLoading] = useState(false);
-  const [data, setData] = useState<any>([]);
+  const [data, setData] = useState<Array<RepoProps>>([]);
   const [page, setPage] = useState(1);
   const [total, setTotal] = useState(0);
 
@@ -60,14 +61,7 @@ const Repositories = () => {
             rowKey="id"
             loading={loading}
             size="large"
-            renderItem={(item: {
-              id: string;
-              name: string;
-              description: string;
-              owner: { avatar_url: string };
-              stargazers_count: number;
-              open_issues_count: number;
-            }) => {
+            renderItem={(item: RepoProps) => {
               return (
                 <List.Item key={item.id}>
                   <List.Item.Meta

@@ -1,4 +1,12 @@
-# Getting Started with Create React App
+# This app created with Create React App with typescript template
+
+## Used Tools & Packaged
+
+antd for the ui , react-infinite-scroll-component for infinity scroll and axios for fetching data
+
+## The prerequisites
+
+yarn or yarn install to install all the dependencies before start.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
